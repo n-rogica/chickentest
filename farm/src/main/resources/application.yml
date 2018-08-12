@@ -22,6 +22,15 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
 
+h2:
+  console:
+    enabled: true
+    path: /h2-console
+    settings:
+      trace: false
+      web-allow-others: false
+
 # HTTP Server
 server:
   port: 2222   # HTTP (Tomcat) port
+

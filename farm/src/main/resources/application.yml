@@ -8,6 +8,9 @@ spring:
     cache: false             # Allow Thymeleaf templates to be reloaded at runtime
     prefix: classpath:/templates/    # Trailing / mandatory
     # Template location for this application only
+  data:
+    rest:
+      base-path: /rest
 
 #module info
 info:

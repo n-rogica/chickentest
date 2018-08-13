@@ -1,10 +1,8 @@
 package com.chickentest.farm.model;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Farm {
@@ -14,10 +12,20 @@ public class Farm {
     private long id;
     private String nombre;
 
+    @ElementCollection
+    List<Long> chickensId = new ArrayList<>();
+
     public Farm() {}
 
     public Farm(String nombre) {
         this.nombre = nombre;
     }
 
+    public void addChickenId(Long chickenId) {
+        this.chickensId.add(chickenId);
+    }
+
+    public int chickenCount() {
+        return this.chickensId.size();
+    }
 }

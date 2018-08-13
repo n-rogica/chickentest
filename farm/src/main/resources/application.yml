@@ -12,6 +12,8 @@ spring:
     rest:
       base-path: /rest
 
+
+
 #module info
 info:
   name: "@project.artifactId@"

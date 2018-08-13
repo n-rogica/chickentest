@@ -23,6 +23,10 @@ public class ChickenApplication {
         Chicken chicken2 = new Chicken(2L);
         Chicken chicken3 = new Chicken(3L);
 
+        chicken1.addEgg(1l);
+        chicken1.addEgg(2l);
+        chicken2.addEgg(3l);
+
         return args -> {
             chickenRepositoryy.save(chicken1);
             chickenRepositoryy.save(chicken2);

@@ -10,22 +10,21 @@ public class Farm {
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private long id;
-    private String nombre;
 
     @ElementCollection
-    List<Long> chickensId = new ArrayList<>();
+    List<Long> chickensIds = new ArrayList<>();
 
     public Farm() {}
 
-    public Farm(String nombre) {
-        this.nombre = nombre;
-    }
-
     public void addChickenId(Long chickenId) {
-        this.chickensId.add(chickenId);
+        this.chickensIds.add(chickenId);
     }
 
     public int chickenCount() {
-        return this.chickensId.size();
+        return this.chickensIds.size();
+    }
+
+    public List<Long> getChickensIds() {
+        return this.chickensIds;
     }
 }

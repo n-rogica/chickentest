@@ -20,9 +20,9 @@ public class FarmApplication {
     @Bean
     public CommandLineRunner initData (FarmRepository farmRepository) {
 
-        Farm farm1 = new Farm("farm 1");
-        Farm farm2 = new Farm("farm 2");
-        Farm farm3 = new Farm("farm 3");
+        Farm farm1 = new Farm();
+        Farm farm2 = new Farm();
+        Farm farm3 = new Farm();
 
         farm1.addChickenId(1L);
         farm1.addChickenId(2L);

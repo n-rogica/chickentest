@@ -1,0 +1,30 @@
+#spring properties
+spring:
+  application:
+    name: farm-client-service
+  freemarker:
+    enabled: false
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+
+error:
+  path=/error
+
+
+#module info
+info:
+  name: "@project.artifactId@"
+  version: "@project.version@"
+  description: "@project.description@"
+  running-profile: "${spring.profiles.active}"
+
+#discovery server access
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+#port
+server:
+  port: 3332

@@ -2,7 +2,9 @@ package com.chickentest.farm.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Farm {
@@ -26,5 +28,12 @@ public class Farm {
 
     public List<Long> getChickensIds() {
         return this.chickensIds;
+    }
+
+    public Map<String,Object> getFarmDTO() {
+        LinkedHashMap<String,Object> farmDTO = new LinkedHashMap<>();
+        farmDTO.put("farmId", this.id);
+        farmDTO.put("chickensIds", this.chickensIds);
+        return farmDTO;
     }
 }

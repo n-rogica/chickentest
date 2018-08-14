@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
 public class FarmController {
 
     @Autowired
@@ -38,6 +37,16 @@ public class FarmController {
     public Object newFarm() {
         farmRepository.save(new Farm());
         return this.createResponseEntity("Ok", "Farm creado", HttpStatus.CREATED);
+    }
+
+    @RequestMapping(path = "getFarm/{farmId}", method = RequestMethod.GET)
+    public Object getFarm(@PathVariable("farmId") Long farmId) {
+        if (farmRepository.existsById(farmId)) {
+            Farm requestFarm = farmRepository.getOne(farmId);
+            return requestFarm.getFarmDTO();
+        }
+
+        return this.createResponseEntity("Error", "Farm id incorrecto", HttpStatus.BAD_REQUEST);
     }
 
 
